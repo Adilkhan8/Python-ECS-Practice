@@ -1,7 +1,3 @@
-# ECS-POC-Python
-# Proof-of-concept: runs SQL Server 2025 in an AWS ECS container, downloads
-# MDF/BAK files from S3, attaches/restores them, and executes queries.
-
 import json
 import os
 import re
