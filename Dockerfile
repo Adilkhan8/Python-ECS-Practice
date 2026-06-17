@@ -10,6 +10,9 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
+# Ensure we're running as root for package installations
+USER root
+
 # Install Python, ODBC support, and the SQL Server ODBC driver needed by pyodbc.
 RUN rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
