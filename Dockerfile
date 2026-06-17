@@ -11,7 +11,9 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1
 
 # Install Python, ODBC support, and the SQL Server ODBC driver needed by pyodbc.
-RUN apt-get update \
+RUN rm -rf /var/lib/apt/lists/* \
+    && apt-get clean \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
         curl \
         gnupg \
